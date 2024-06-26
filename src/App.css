@@ -1,0 +1,156 @@
+/* App.css */
+
+.main {
+  height: 97vh;
+  width: 97vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  height: 500px;
+  width: 500px;
+  background-color: rgb(247, 245, 245);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.empty-box {
+  text-align: center;
+  font-size: 1.5em;
+  color: rgb(132, 132, 243);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icons-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0);
+}
+
+.icons-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.icons-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.icons-container::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.icon-wrapper.selected::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 2px solid rgb(132, 132, 243);
+  border-radius: 10px;
+}
+
+.get-start {
+  height: 7vh;
+  width: 15vw;
+  background-color: rgb(173, 173, 233);
+  border-radius: 7px;
+  color: white;
+  font-weight: bold;
+  font-size: 2vh;
+  cursor: pointer;
+  border: none;
+}
+
+@media (max-width: 500px) {
+  .box {
+    display: none; /* Hide the main content */
+  }
+
+  .warning {
+    display: block; /* Show the warning message */
+  }
+}
+
+/* Styles for the warning message */
+.warning {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.confirmation-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.confirmation-modal p {
+  margin-bottom: 10px;
+}
+
+.confirmation-modal button {
+  margin-right: 10px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirmation-modal button:hover {
+  background-color: #0056b3;
+}
